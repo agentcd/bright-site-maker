@@ -25,9 +25,13 @@ const Hero = () => {
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ 
+            scale: 1.1,
+            transition: { duration: 0.15, ease: 'easeInOut' }
+          }}
           transition={{ duration: 0.8, delay: 0.2, type: 'spring', bounce: 0.3 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 transition-transform duration-300 ease-in-out cursor-pointer"
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 cursor-pointer"
+          style={{ willChange: 'transform' }}
         >
           BrightSmile Dental Clinic
         </motion.h1>
@@ -35,9 +39,13 @@ const Hero = () => {
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ 
+            scale: 1.1,
+            transition: { duration: 0.15, ease: 'easeInOut' }
+          }}
           transition={{ duration: 0.8, delay: 0.4, type: 'spring', bounce: 0.3 }}
-          className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 transition-transform duration-300 ease-in-out cursor-pointer"
+          className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 cursor-pointer"
+          style={{ willChange: 'transform' }}
         >
           Expert Care for Your Smile
         </motion.p>
@@ -48,10 +56,11 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6, type: 'spring', bounce: 0.3 }}
           whileHover={{ 
             scale: 1.1,
-            boxShadow: '0 20px 40px rgba(255, 111, 97, 0.4)'
+            transition: { duration: 0.15, ease: 'easeInOut' }
           }}
           whileTap={{ scale: 0.95 }}
           className="btn-gradient text-lg sm:text-xl px-8 py-4 animate-glow"
+          style={{ willChange: 'transform' }}
         >
           Book Your Appointment Now
         </motion.button>

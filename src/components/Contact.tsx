@@ -98,7 +98,7 @@ const Contact = () => {
               duration: 0.8 
             }}
             viewport={{ once: true }}
-            className="glass-card p-8"
+            className="glass-card p-8 flex flex-col h-full"
           >
             <motion.h3
               whileHover={{ scale: 1.02 }}
@@ -107,7 +107,7 @@ const Contact = () => {
               Book Your Consultation
             </motion.h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileFocus={{ scale: 1.02 }}
@@ -118,7 +118,7 @@ const Contact = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="form-input"
+                  className="form-input w-full"
                   required
                 />
               </motion.div>
@@ -133,7 +133,7 @@ const Contact = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="form-input"
+                  className="form-input w-full"
                   required
                 />
               </motion.div>
@@ -148,13 +148,14 @@ const Contact = () => {
                   placeholder="Your Phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="form-input"
+                  className="form-input w-full"
                 />
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileFocus={{ scale: 1.02 }}
+                className="flex-grow"
               >
                 <textarea
                   name="message"
@@ -162,16 +163,20 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="form-input resize-none"
+                  className="form-input resize-none w-full h-full min-h-[120px]"
                   required
                 />
               </motion.div>
               
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.15, ease: 'easeInOut' }
+                }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-gradient w-full"
+                className="btn-gradient w-full mt-auto"
+                style={{ willChange: 'transform' }}
               >
                 Send Message
               </motion.button>

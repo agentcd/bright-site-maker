@@ -198,7 +198,7 @@ const Team = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.15, ease: 'easeInOut' }}
-                  className="flex items-center justify-center gap-2 bg-secondary rounded-lg p-2"
+                  className="flex items-center justify-center gap-2 bg-secondary rounded-lg p-2 mb-4"
                 >
                   <FaClock className="text-primary text-sm" />
                   <span className="text-sm text-muted-foreground">{member.availability}</span>
@@ -211,6 +211,7 @@ const Team = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.15, ease: 'easeInOut' }}
                 className="btn-gradient w-full mt-auto"
+                style={{ marginTop: '16px' }}
               >
                 Book Now
               </motion.button>

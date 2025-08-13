@@ -37,17 +37,25 @@ const Emergency = () => {
           </motion.div>
 
           <motion.h2
-            whileHover={{ scale: 1.02 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-hover"
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.15, ease: 'easeInOut' }
+            }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 cursor-pointer"
+            style={{ willChange: 'transform' }}
           >
             24/7 Emergency Dental Care
           </motion.h2>
           
           <motion.p
-            whileHover={{ scale: 1.02 }}
-            className="text-xl sm:text-2xl mb-8 text-hover"
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.15, ease: 'easeInOut' }
+            }}
+            className="text-xl sm:text-2xl mb-8 cursor-pointer"
+            style={{ willChange: 'transform' }}
           >
-            Urgent Dental Help Anytime, Day or Night
+            Dental emergencies don't wait for business hours
           </motion.p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
@@ -71,10 +79,11 @@ const Emergency = () => {
           <motion.button
             whileHover={{ 
               scale: 1.1,
-              boxShadow: '0 20px 40px rgba(255, 111, 97, 0.4)'
+              transition: { duration: 0.15, ease: 'easeInOut' }
             }}
             whileTap={{ scale: 0.95 }}
-            className="text-lg px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95"
+            className="text-lg px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg"
+            style={{ willChange: 'transform', borderRadius: '12px' }}
           >
             Call Emergency Line Now
           </motion.button>

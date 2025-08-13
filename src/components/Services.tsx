@@ -176,6 +176,7 @@ const Services = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.15, ease: 'easeInOut' }}
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedService(null)}
           >
@@ -186,10 +187,12 @@ const Services = () => {
               transition={{
                 type: 'spring',
                 stiffness: 150,
-                damping: 10
+                damping: 10,
+                duration: 0.15
               }}
               className="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8"
               onClick={e => e.stopPropagation()}
+              style={{ willChange: 'transform' }}
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="flex items-center gap-4">
