@@ -61,23 +61,24 @@ const Team = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.1
       }
     }
   };
 
   const cardVariants = {
-    hidden: (direction: number) => ({
+    hidden: {
       opacity: 0,
-      x: direction * 100
-    }),
+      y: 50
+    },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: 'spring' as const,
-        bounce: 0.3,
-        duration: 0.8
+        stiffness: 100,
+        damping: 15
       }
     }
   };
@@ -111,12 +112,11 @@ const Team = () => {
             <motion.div
               key={member.id}
               variants={cardVariants}
-              custom={index % 2 === 0 ? -1 : 1}
               whileHover={{ 
                 scale: 1.05,
                 y: -10
               }}
-              className="glass-card p-6 text-center hover-scale group"
+              className="glass-card p-6 text-center hover-scale group flex flex-col"
             >
               {/* Profile Image */}
               <motion.div
@@ -166,7 +166,8 @@ const Team = () => {
               {/* Bio */}
               <motion.p
                 whileHover={{ scale: 1.02 }}
-                className="text-muted-foreground text-sm mb-4 text-hover"
+                className="text-muted-foreground text-sm mb-4 text-hover flex-grow"
+                style={{ minHeight: '100px', overflow: 'hidden' }}
               >
                 {member.bio}
               </motion.p>
@@ -194,9 +195,9 @@ const Team = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-gradient w-full mt-6"
+                className="btn-gradient w-full mt-auto"
               >
-                Book with {member.name.split(' ')[1]}
+                Book Now
               </motion.button>
             </motion.div>
           ))}

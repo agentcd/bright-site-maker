@@ -74,7 +74,7 @@ const Emergency = () => {
               boxShadow: '0 20px 40px rgba(255, 111, 97, 0.4)'
             }}
             whileTap={{ scale: 0.95 }}
-            className="btn-gradient text-lg px-8 py-4 animate-glow"
+            className="text-lg px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 active:scale-95"
           >
             Call Emergency Line Now
           </motion.button>

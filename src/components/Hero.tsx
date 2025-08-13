@@ -17,7 +17,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary-dark/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary-dark/70" style={{opacity: 0.6}}></div>
       </motion.div>
 
       {/* Content */}
@@ -25,8 +25,9 @@ const Hero = () => {
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.8, delay: 0.2, type: 'spring', bounce: 0.3 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-hover"
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 transition-transform duration-300 ease-in-out cursor-pointer"
         >
           BrightSmile Dental Clinic
         </motion.h1>
@@ -34,8 +35,9 @@ const Hero = () => {
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
+          whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.8, delay: 0.4, type: 'spring', bounce: 0.3 }}
-          className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 text-hover"
+          className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 transition-transform duration-300 ease-in-out cursor-pointer"
         >
           Expert Care for Your Smile
         </motion.p>
@@ -54,17 +56,6 @@ const Hero = () => {
           Book Your Appointment Now
         </motion.button>
 
-        {/* Floating Elements */}
-        <motion.div
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full backdrop-blur-sm hidden lg:block"
-        />
-        <motion.div
-          animate={{ y: [10, -10, 10] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute bottom-20 right-10 w-16 h-16 bg-coral/20 rounded-full backdrop-blur-sm hidden lg:block"
-        />
       </div>
 
       {/* Scroll Indicator */}

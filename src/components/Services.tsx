@@ -72,23 +72,24 @@ const Services = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.1
       }
     }
   };
 
   const cardVariants = {
-    hidden: (direction: number) => ({
+    hidden: {
       opacity: 0,
-      x: direction * 100
-    }),
+      y: 50
+    },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: 'spring' as const,
-        bounce: 0.3,
-        duration: 0.8
+        stiffness: 100,
+        damping: 15
       }
     }
   };
@@ -122,7 +123,6 @@ const Services = () => {
             <motion.div
               key={service.id}
               variants={cardVariants}
-              custom={index % 2 === 0 ? -1 : 1}
               whileHover={{ 
                 scale: 1.05,
                 y: -10

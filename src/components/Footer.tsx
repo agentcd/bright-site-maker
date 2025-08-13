@@ -142,14 +142,16 @@ const Footer = () => {
           className="bg-destructive rounded-lg p-6 mb-8 text-center"
         >
           <motion.h4
-            whileHover={{ scale: 1.02 }}
-            className="text-xl font-bold mb-2 text-hover"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="text-xl font-bold mb-2 transition-transform duration-300 ease-in-out cursor-pointer"
           >
             24/7 Emergency Dental Care
           </motion.h4>
           <motion.p
-            whileHover={{ scale: 1.02 }}
-            className="mb-4 text-hover"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="mb-4 transition-transform duration-300 ease-in-out cursor-pointer"
           >
             Dental emergencies don't wait for business hours
           </motion.p>

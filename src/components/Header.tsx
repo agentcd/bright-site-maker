@@ -34,9 +34,8 @@ const Header = () => {
             <motion.div
               key={link.to}
               whileHover={{ 
-                scale: 1.05,
                 backgroundColor: 'hsla(var(--primary-light) / 0.3)',
-                border: '2px solid hsl(var(--primary-dark))'
+                borderBottom: '2px solid hsl(var(--primary-dark))'
               }}
               className="nav-link cursor-pointer"
             >
