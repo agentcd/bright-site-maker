@@ -272,7 +272,7 @@ const Contact = () => {
           </motion.h3>
           
           <LoadScript 
-            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY || 'demo'}
+            googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY || ''}
             loadingElement={
               <div className="w-full h-[300px] bg-secondary rounded-lg flex items-center justify-center">
                 <div className="text-muted-foreground">Loading map...</div>
