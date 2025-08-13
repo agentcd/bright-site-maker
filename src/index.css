@@ -2,95 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Dental Clinic Design System */
 
 @layer base {
   :root {
+    /* Brand Colors - HSL values for dental clinic */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 234 32% 11%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 234 32% 11%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 234 32% 11%;
+    
+    /* Primary Teal - Trust and Energy */
+    --primary: 174 46% 42%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 174 46% 82%;
+    --primary-dark: 174 100% 20%;
+    
+    /* Secondary Gray - Clean and Modern */
+    --secondary: 200 17% 94%;
+    --secondary-foreground: 234 32% 11%;
+    
+    /* Muted */
+    --muted: 200 17% 94%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Accent Coral - Call to Action */
+    --accent: 7 91% 69%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Emergency Red */
+    --destructive: 351 83% 51%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Navy Text */
+    --navy: 234 74% 20%;
+    
+    /* Borders and Inputs */
+    --border: 200 17% 94%;
+    --input: 200 17% 94%;
+    --ring: 174 46% 42%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 174 46% 42% / 0.2;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+    --gradient-emergency: linear-gradient(135deg, hsl(var(--destructive)) 0%, hsl(351 83% 35%) 100%);
+    
+    /* Shadows and Effects */
+    --shadow-glass: 0 8px 32px hsl(174 46% 42% / 0.1);
+    --shadow-elevated: 0 10px 30px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s ease-in-out;
+    
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 234 32% 11%;
+    --foreground: 0 0% 98%;
+    
+    --card: 234 32% 11%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 234 32% 11%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 174 46% 50%;
+    --primary-foreground: 234 32% 11%;
+    
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 65%;
+    
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 174 46% 50%;
+    
+    --glass-bg: 234 32% 11% / 0.8;
   }
 }
 
@@ -98,8 +98,101 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+    @apply rounded-xl;
+  }
+  
+  /* Gradient Button */
+  .btn-gradient {
+    background: var(--gradient-primary);
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+  
+  /* Emergency Button */
+  .btn-emergency {
+    background: var(--gradient-emergency);
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+  
+  /* Nav Link Hover Effect */
+  .nav-link {
+    @apply relative px-4 py-2 rounded-lg text-navy font-medium transition-all duration-300;
+  }
+  
+  .nav-link:hover {
+    @apply text-primary bg-primary-light/30;
+    border: 2px solid hsl(var(--primary-dark));
+  }
+  
+  /* Hover Scale Effect - Applied to All Interactive Elements */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  /* Text Hover Effect for Non-Interactive Elements */
+  .text-hover {
+    @apply transition-all duration-200 hover:scale-102 hover:text-primary;
+  }
+  
+  /* Form Input Styling */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:scale-105;
+  }
+  
+  /* Hero Background */
+  .hero-bg {
+    background: linear-gradient(135deg, hsla(var(--primary) / 0.9), hsla(var(--primary-dark) / 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    background-size: cover, 50px 50px;
+    background-position: center, center;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  to { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
