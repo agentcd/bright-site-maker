@@ -81,15 +81,19 @@ const Services = () => {
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: 50
+      y: 50,
+      rotateX: 10,
+      scale: 1.0
     },
     visible: {
       opacity: 1,
       y: 0,
+      rotateX: 0,
+      scale: 1.02,
       transition: {
         type: 'spring' as const,
-        stiffness: 100,
-        damping: 15
+        stiffness: 120,
+        damping: 12
       }
     }
   };
@@ -124,27 +128,40 @@ const Services = () => {
               key={service.id}
               variants={cardVariants}
               whileHover={{ 
-                scale: 1.05,
-                y: -10
+                scale: 1.1,
+                y: -5,
+                boxShadow: '0 4px 15px rgba(38, 166, 154, 0.3)',
+                transition: { duration: 0.15, ease: 'easeInOut' }
               }}
-              className="glass-card p-8 text-center hover-scale cursor-pointer group"
+              className="glass-card p-8 text-center cursor-pointer group"
+              style={{ willChange: 'transform' }}
               onClick={() => setSelectedService(service)}
             >
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
                 className="text-primary mb-6 flex justify-center"
               >
                 {service.icon}
               </motion.div>
-              <h3 className="text-xl font-bold text-navy mb-4 text-hover group-hover:text-primary transition-colors">
+              <motion.h3 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
+                className="text-xl font-bold text-navy mb-4 group-hover:text-primary transition-colors"
+              >
                 {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-6 text-hover">
+              </motion.h3>
+              <motion.p 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
+                className="text-muted-foreground mb-6"
+              >
                 {service.description}
-              </p>
+              </motion.p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
                 className="btn-gradient"
               >
                 Learn More
@@ -163,9 +180,14 @@ const Services = () => {
             onClick={() => setSelectedService(null)}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 150,
+                damping: 10
+              }}
               className="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8"
               onClick={e => e.stopPropagation()}
             >

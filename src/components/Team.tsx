@@ -70,15 +70,19 @@ const Team = () => {
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: 50
+      y: 50,
+      rotateX: 10,
+      scale: 1.0
     },
     visible: {
       opacity: 1,
       y: 0,
+      rotateX: 0,
+      scale: 1.02,
       transition: {
         type: 'spring' as const,
-        stiffness: 100,
-        damping: 15
+        stiffness: 120,
+        damping: 12
       }
     }
   };
@@ -113,36 +117,42 @@ const Team = () => {
               key={member.id}
               variants={cardVariants}
               whileHover={{ 
-                scale: 1.05,
-                y: -10
+                scale: 1.1,
+                y: -5,
+                boxShadow: '0 4px 15px rgba(38, 166, 154, 0.3)',
+                transition: { duration: 0.15, ease: 'easeInOut' }
               }}
-              className="glass-card p-6 text-center hover-scale group flex flex-col"
+              className="glass-card p-6 text-center group flex flex-col"
+              style={{ willChange: 'transform' }}
             >
               {/* Profile Image */}
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
                 className="relative mx-auto mb-6 w-32 h-32 rounded-full overflow-hidden shadow-lg"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-150 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
               </motion.div>
 
               {/* Name and Specialty */}
               <motion.h3
-                whileHover={{ scale: 1.02 }}
-                className="text-xl font-bold text-navy mb-2 text-hover group-hover:text-primary transition-colors"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
+                className="text-xl font-bold text-navy mb-2 group-hover:text-primary transition-colors duration-150"
               >
                 {member.name}
               </motion.h3>
               
               <motion.p
-                whileHover={{ scale: 1.02 }}
-                className="text-primary font-medium mb-3 text-hover"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
+                className="text-primary font-medium mb-3"
               >
                 {member.specialty}
               </motion.p>
@@ -150,7 +160,8 @@ const Team = () => {
               {/* Rating */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center justify-center gap-1 mb-4 hover-scale"
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
+                className="flex items-center justify-center gap-1 mb-4"
               >
                 {[...Array(5)].map((_, i) => (
                   <FaStar
@@ -165,8 +176,9 @@ const Team = () => {
 
               {/* Bio */}
               <motion.p
-                whileHover={{ scale: 1.02 }}
-                className="text-muted-foreground text-sm mb-4 text-hover flex-grow"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
+                className="text-muted-foreground text-sm mb-4 flex-grow"
                 style={{ minHeight: '100px', overflow: 'hidden' }}
               >
                 {member.bio}
@@ -176,7 +188,8 @@ const Team = () => {
               <div className="space-y-3">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center justify-center gap-2 bg-primary/10 rounded-lg p-2 hover-scale"
+                  transition={{ duration: 0.15, ease: 'easeInOut' }}
+                  className="flex items-center justify-center gap-2 bg-primary/10 rounded-lg p-2"
                 >
                   <FaGraduationCap className="text-primary text-sm" />
                   <span className="text-sm font-medium text-navy">{member.experience}</span>
@@ -184,7 +197,8 @@ const Team = () => {
                 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center justify-center gap-2 bg-secondary rounded-lg p-2 hover-scale"
+                  transition={{ duration: 0.15, ease: 'easeInOut' }}
+                  className="flex items-center justify-center gap-2 bg-secondary rounded-lg p-2"
                 >
                   <FaClock className="text-primary text-sm" />
                   <span className="text-sm text-muted-foreground">{member.availability}</span>
@@ -195,6 +209,7 @@ const Team = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.15, ease: 'easeInOut' }}
                 className="btn-gradient w-full mt-auto"
               >
                 Book Now
