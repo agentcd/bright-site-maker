@@ -99,8 +99,8 @@ const Services = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-secondary overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+    <section className="py-16 sm:py-24 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-full"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
@@ -133,8 +133,8 @@ const Services = () => {
                 boxShadow: '0 4px 15px rgba(38, 166, 154, 0.3)',
                 transition: { duration: 0.15, ease: 'easeInOut' }
               }}
-              className="glass-card p-6 sm:p-8 text-center cursor-pointer group max-w-full"
-              style={{ willChange: 'transform', maxWidth: '100%', boxSizing: 'border-box' }}
+              className="glass-card p-6 sm:p-8 text-center cursor-pointer group"
+              style={{ willChange: 'transform' }}
               onClick={() => setSelectedService(service)}
             >
               <motion.div
@@ -177,7 +177,7 @@ const Services = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease: 'easeInOut' }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-x-hidden"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedService(null)}
           >
             <motion.div
@@ -190,7 +190,7 @@ const Services = () => {
                 damping: 10,
                 duration: 0.15
               }}
-              className="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 sm:p-8 max-w-[calc(100vw-2rem)]"
+              className="glass-card max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 sm:p-8 mx-4"
               onClick={e => e.stopPropagation()}
               style={{ willChange: 'transform' }}
             >

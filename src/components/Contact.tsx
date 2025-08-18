@@ -69,8 +69,8 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-secondary overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+    <section className="py-16 sm:py-24 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 max-w-full overflow-x-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16">
           {/* Consultation Form */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -98,7 +98,7 @@ const Contact = () => {
               duration: 0.8 
             }}
             viewport={{ once: false, amount: 0 }}
-            className="glass-card p-6 sm:p-8 flex flex-col h-full max-w-full"
+            className="glass-card p-6 sm:p-8 flex flex-col h-full"
           >
             <motion.h3
               whileHover={{ scale: 1.02 }}
@@ -193,7 +193,7 @@ const Contact = () => {
               duration: 0.8 
             }}
             viewport={{ once: false, amount: 0 }}
-            className="glass-card p-6 sm:p-8 max-w-full"
+            className="glass-card p-6 sm:p-8"
           >
             <motion.h3
               whileHover={{ scale: 1.02 }}
@@ -267,7 +267,7 @@ const Contact = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           viewport={{ once: false, amount: 0 }}
-          className="glass-card p-4 overflow-hidden max-w-full"
+          className="glass-card p-4 overflow-hidden"
         >
           <motion.h3
             whileHover={{ scale: 1.02 }}

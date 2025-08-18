@@ -88,8 +88,8 @@ const Team = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-background overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+    <section className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ const Team = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-full"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
         >
           {teamMembers.map((member, index) => (
             <motion.div
@@ -122,8 +122,8 @@ const Team = () => {
                 boxShadow: '0 4px 15px rgba(38, 166, 154, 0.3)',
                 transition: { duration: 0.15, ease: 'easeInOut' }
               }}
-              className="glass-card p-4 sm:p-6 text-center group flex flex-col max-w-full"
-              style={{ willChange: 'transform', maxWidth: '100%', boxSizing: 'border-box' }}
+              className="glass-card p-4 sm:p-6 text-center group flex flex-col"
+              style={{ willChange: 'transform' }}
             >
               {/* Profile Image */}
               <motion.div

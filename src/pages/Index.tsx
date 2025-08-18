@@ -9,9 +9,9 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden max-w-full">
+    <div className="min-h-screen">
       <Header />
-      <main className="overflow-x-hidden max-w-full">
+      <main>
         <Element name="hero">
           <Hero />
         </Element>

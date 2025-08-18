@@ -36,10 +36,10 @@ const Footer = () => {
         duration: 0.8 
       }}
       viewport={{ once: false, amount: 0 }}
-      className="bg-navy text-white overflow-x-hidden"
+      className="bg-navy text-white"
     >
-      <div className="container mx-auto px-4 sm:px-6 py-16 max-w-full">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-12 max-w-full overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-12">
           {/* Clinic Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
