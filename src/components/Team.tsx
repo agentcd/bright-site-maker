@@ -88,13 +88,13 @@ const Team = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-8">
+    <section className="py-16 sm:py-24 bg-background overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6 text-hover">
@@ -109,8 +109,8 @@ const Team = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          viewport={{ once: false, amount: 0 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-full"
         >
           {teamMembers.map((member, index) => (
             <motion.div
@@ -122,8 +122,8 @@ const Team = () => {
                 boxShadow: '0 4px 15px rgba(38, 166, 154, 0.3)',
                 transition: { duration: 0.15, ease: 'easeInOut' }
               }}
-              className="glass-card p-6 text-center group flex flex-col"
-              style={{ willChange: 'transform' }}
+              className="glass-card p-4 sm:p-6 text-center group flex flex-col max-w-full"
+              style={{ willChange: 'transform', maxWidth: '100%', boxSizing: 'border-box' }}
             >
               {/* Profile Image */}
               <motion.div
@@ -224,8 +224,8 @@ const Team = () => {
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
+          viewport={{ once: false, amount: 0 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-16 max-w-4xl mx-auto"
         >
           {[
             { number: '10,000+', label: 'Happy Patients' },

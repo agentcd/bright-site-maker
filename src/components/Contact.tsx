@@ -69,13 +69,13 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-secondary">
-      <div className="container mx-auto px-4 sm:px-8">
+    <section className="py-16 sm:py-24 bg-secondary overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-6 text-hover">
@@ -87,7 +87,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 max-w-full overflow-x-hidden">
           {/* Consultation Form */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -97,8 +97,8 @@ const Contact = () => {
               bounce: 0.3,
               duration: 0.8 
             }}
-            viewport={{ once: true }}
-            className="glass-card p-8 flex flex-col h-full"
+            viewport={{ once: false, amount: 0 }}
+            className="glass-card p-6 sm:p-8 flex flex-col h-full max-w-full"
           >
             <motion.h3
               whileHover={{ scale: 1.02 }}
@@ -192,8 +192,8 @@ const Contact = () => {
               bounce: 0.3,
               duration: 0.8 
             }}
-            viewport={{ once: true }}
-            className="glass-card p-8"
+            viewport={{ once: false, amount: 0 }}
+            className="glass-card p-6 sm:p-8 max-w-full"
           >
             <motion.h3
               whileHover={{ scale: 1.02 }}
@@ -266,8 +266,8 @@ const Contact = () => {
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="glass-card p-4 overflow-hidden"
+          viewport={{ once: false, amount: 0 }}
+          className="glass-card p-4 overflow-hidden max-w-full"
         >
           <motion.h3
             whileHover={{ scale: 1.02 }}

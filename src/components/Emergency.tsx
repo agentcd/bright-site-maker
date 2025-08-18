@@ -8,7 +8,7 @@ const Emergency = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="py-16 bg-gradient-to-r from-destructive to-red-700 relative overflow-hidden"
+      className="py-16 bg-gradient-to-r from-destructive to-red-700 relative overflow-hidden max-w-full"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -17,7 +17,7 @@ const Emergency = () => {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-full overflow-x-hidden">
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -26,7 +26,7 @@ const Emergency = () => {
             bounce: 0.3,
             duration: 0.8 
           }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0 }}
           className="text-center text-white"
         >
           <motion.div
@@ -93,8 +93,8 @@ const Emergency = () => {
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto"
+            viewport={{ once: false, amount: 0 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto overflow-x-hidden"
           >
             {[
               { title: 'Severe Toothache', desc: 'Immediate pain relief' },
